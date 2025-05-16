@@ -74,8 +74,8 @@ const Services: React.FC = () => {
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
-              border: "1px solid rgba(0, 212, 255, 0.3)", // soft bluish border
-              boxShadow: "0 0 10px rgba(0, 212, 255, 0.1)", // subtle glow
+              border: "1px solid rgba(255, 255, 255, 0.8)", // soft bluish border
+              boxShadow: "0 0 10px rgba(196, 203, 204, 0.8)", // subtle glow
               transition: "box-shadow 0.3s ease, transform 0.3s ease",
             }}
             ref={(el) => {

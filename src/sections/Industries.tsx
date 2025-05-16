@@ -7,7 +7,6 @@ import { JSX } from "react";
 import {
   FaCar,
   FaUniversity,
-  FaWater,
   FaChartLine,
   FaSatelliteDish,
   FaShoppingBasket,
@@ -21,7 +20,6 @@ import {
   FaStore,
   FaTruck,
   FaPlaneDeparture,
-  FaBolt,
 } from "react-icons/fa";
 
 export const industriesData: {
@@ -56,19 +54,19 @@ export const industriesData: {
       "Regulatory Reporting & Compliance Systems",
     ],
   },
-  {
-    title: "Blue Economy",
-    icon: <FaWater size={40} />,
-    description:
-      "Supporting sustainable ocean-based industries, we offer digital solutions for smart ports, marine data analytics, coastal monitoring, and fisheries management. Our work empowers governments, research institutions, and maritime businesses to harness real-time insights from oceanographic data for better conservation and economic impact.",
-    capabilities: [
-      "Marine Data Analytics & Remote Sensing",
-      "Smart Port & Maritime Logistics Solutions",
-      "Sustainable Fisheries Monitoring Platforms",
-      "Oceanographic Sensor Integration",
-      "Coastal Zone Management Dashboards",
-    ],
-  },
+  // {
+  //   title: "Blue Economy",
+  //   icon: <FaWater size={40} />,
+  //   description:
+  //     "Supporting sustainable ocean-based industries, we offer digital solutions for smart ports, marine data analytics, coastal monitoring, and fisheries management. Our work empowers governments, research institutions, and maritime businesses to harness real-time insights from oceanographic data for better conservation and economic impact.",
+  //   capabilities: [
+  //     "Marine Data Analytics & Remote Sensing",
+  //     "Smart Port & Maritime Logistics Solutions",
+  //     "Sustainable Fisheries Monitoring Platforms",
+  //     "Oceanographic Sensor Integration",
+  //     "Coastal Zone Management Dashboards",
+  //   ],
+  // },
   {
     title: "Capital Markets",
     icon: <FaChartLine size={40} />,
@@ -238,19 +236,19 @@ export const industriesData: {
       "Contactless Check-In/Check-Out Systems",
     ],
   },
-  {
-    title: "Utilities",
-    icon: <FaBolt size={40} />,
-    description:
-      "We help utility providers modernize infrastructure with smart grid analytics, outage management systems, and renewable energy monitoring tools. Our customer-facing solutions include billing portals, usage dashboards, and self-service applications — all built with security, scalability, and regulatory compliance in mind.",
-    capabilities: [
-      "Smart Metering & Grid Analytics",
-      "Outage Management Systems",
-      "Energy Usage Forecasting",
-      "Renewable Integration Monitoring",
-      "Customer Billing Portals",
-    ],
-  },
+  // {
+  //   title: "Utilities",
+  //   icon: <FaBolt size={40} />,
+  //   description:
+  //     "We help utility providers modernize infrastructure with smart grid analytics, outage management systems, and renewable energy monitoring tools. Our customer-facing solutions include billing portals, usage dashboards, and self-service applications — all built with security, scalability, and regulatory compliance in mind.",
+  //   capabilities: [
+  //     "Smart Metering & Grid Analytics",
+  //     "Outage Management Systems",
+  //     "Energy Usage Forecasting",
+  //     "Renewable Integration Monitoring",
+  //     "Customer Billing Portals",
+  //   ],
+  // },
 ];
 
 const Industries: React.FC = () => (

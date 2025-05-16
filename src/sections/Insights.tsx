@@ -110,8 +110,8 @@ const Insights: React.FC = () => {
                 padding: "1.5rem",
                 borderRadius: "8px",
                 marginBottom: "2rem",
-                border: "1px solid rgba(0, 212, 255, 0.3)", // soft bluish border
-                boxShadow: "0 0 10px rgba(0, 212, 255, 0.1)", // subtle glow
+                border: "1px solid rgba(249, 249, 249, 0.85)", // soft bluish border
+                boxShadow: "0 0 10px rgba(229, 234, 235, 0.8)", // subtle glow
                 transition: "box-shadow 0.3s ease, transform 0.3s ease",
 
               }}

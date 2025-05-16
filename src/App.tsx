@@ -34,7 +34,7 @@ const App: React.FC = () => {
             left: "50%",
             transform: "translate(-50%, -50%)",
             height: "100vh",
-            zIndex: -1,
+            // zIndex: -1,
             pointerEvents: "none",
             opacity: 0.1,
             objectFit: "cover", // ensures the image scales well

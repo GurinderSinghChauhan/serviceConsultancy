@@ -67,9 +67,9 @@ const About: React.FC = () => (
         }}
       >
         {[
-          { name: "Rishu Sharma", role: "Founder & Lead Developer" },
-          { name: "Sneha Sharma", role: "Project Manager" },
-          { name: "Karan Verma", role: "UI/UX Designer" },
+          { name: "ben", role: "Founder & Lead Developer" },
+          { name: "martin", role: "Project Manager" },
+          { name: "keni", role: "UI/UX Designer" },
         ].map((member, idx) => (
           <div
             key={idx}

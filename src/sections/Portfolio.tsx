@@ -52,8 +52,8 @@ const Portfolio: React.FC = () => {
                   // border: `1px solid ${theme.colors.cardBorder}`,
                   padding: "1.5rem",
                   borderRadius: "8px",
-                  border: "1px solid rgba(0, 212, 255, 0.3)", // soft bluish border
-                  boxShadow: "0 0 10px rgba(0, 212, 255, 0.1)", // subtle glow
+                  border: "1px solid rgba(251, 254, 255, 0.71)", // soft bluish border
+                  boxShadow: "0 0 10px rgba(248, 249, 249, 0.69)", // subtle glow
                   transition: "box-shadow 0.3s ease, transform 0.3s ease",
                 }}
               >
