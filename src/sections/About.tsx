@@ -7,7 +7,7 @@ const About: React.FC = () => (
     style={{
       // backgroundColor: theme.colors.background,
       color: theme.colors.text,
-      minHeight: "100vh",
+      // minHeight: "100vh",
       width: "100vw",
       display: "flex",
       flexDirection: "column",
@@ -27,7 +27,7 @@ const About: React.FC = () => (
     </section>
 
     {/* Founding Story Timeline */}
-    <section style={{ padding: "2rem" }}>
+    {/* <section style={{ padding: "2rem" }}>
       <h2 style={{ textAlign: "center" }}>Our Journey</h2>
       <ul
         style={{
@@ -52,10 +52,10 @@ const About: React.FC = () => (
           <strong>2023:</strong> Trusted by clients in 5+ countries.
         </li>
       </ul>
-    </section>
+    </section> */}
 
     {/* Meet the Team */}
-    <section style={{ padding: "2rem", textAlign: "center" }}>
+    {/* <section style={{ padding: "2rem", textAlign: "center" }}>
       <h2>Meet the Team</h2>
       <div
         style={{
@@ -67,9 +67,9 @@ const About: React.FC = () => (
         }}
       >
         {[
-          { name: "ben", role: "Founder & Lead Developer" },
-          { name: "martin", role: "Project Manager" },
-          { name: "keni", role: "UI/UX Designer" },
+          { name: "Rishu Sharma", role: "Founder & Lead Developer" },
+          { name: "Sneha Sharma", role: "Project Manager" },
+          { name: "Karan Verma", role: "UI/UX Designer" },
         ].map((member, idx) => (
           <div
             key={idx}
@@ -97,7 +97,7 @@ const About: React.FC = () => (
           </div>
         ))}
       </div>
-    </section>
+    </section> */}
 
     {/* Core Values Section */}
     <section style={{ padding: "2rem", textAlign: "center" }}>
@@ -133,7 +133,7 @@ const About: React.FC = () => (
     </section>
 
     {/* Achievements & Stats */}
-    <section style={{ padding: "2rem", textAlign: "center" }}>
+    {/* <section style={{ padding: "2rem", textAlign: "center" }}>
       <h2>Our Achievements</h2>
       <div
         style={{
@@ -157,7 +157,7 @@ const About: React.FC = () => (
           </div>
         ))}
       </div>
-    </section>
+    </section> */}
   </div>
 );
 

@@ -206,3 +206,64 @@
 .featured-item:hover {
   background-color: #f0f0f0;
 }
+
+@keyframes gradientFlowLR {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient-border {
+  0% {
+    border-image-source: linear-gradient(90deg, #7DF9FF, #D096F0);
+  }
+  50% {
+    border-image-source: linear-gradient(90deg, #D096F0, #7DF9FF);
+  }
+  100% {
+    border-image-source: linear-gradient(90deg, #7DF9FF, #D096F0);
+  }
+}
+
+/* In your CSS file or inside a <style> tag */
+.header-with-gradient-border::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(270deg, #7DF9FF, #D096F0, #7DF9FF);
+  background-size: 600% 600%;
+  animation: animateBorder 6s ease infinite;
+}
+
+@keyframes animateBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

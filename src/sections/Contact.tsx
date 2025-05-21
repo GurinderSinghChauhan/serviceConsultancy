@@ -13,14 +13,15 @@ const Contact: React.FC = () => {
   return (
     <div
       style={{
-        // backgroundColor: theme.colors.background,
         color: theme.colors.text,
         minHeight: "100vh",
-        width: "100vw",
+        width: "100%", // Fixed from 100vw
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         padding: "2rem",
+        boxSizing: "border-box", // Prevent padding from pushing content
+        overflowX: "hidden", // Optional: ensure horizontal scroll doesn't appear
       }}
     >
       <div

@@ -8,6 +8,8 @@ import {
   services,
 } from "../assets/mockData/mockData";
 import brainlogo from "../assets/brain-logo.jpeg";
+import { FiMenu, FiX } from "react-icons/fi";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Header: React.FC = () => {
   const [hoveredNav, setHoveredNav] = useState<string | null>(null);
@@ -15,7 +17,8 @@ const Header: React.FC = () => {
   const [selectedService, setSelectedService] = useState(services[0]);
   const [selectedIndustry, setSelectedIndustry] = useState(industriesData[0]);
   const [selected, setSelected] = useState(aboutData[0]);
-  const [selectedInsight, setSelectedInsight] = useState(insightsData[0]);
+  const [selectedInsight, setSelectedInsight] = useState(insightsData?.[0]);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <header
@@ -24,56 +27,43 @@ const Header: React.FC = () => {
         top: 0,
         left: 0,
         width: "100%",
-        justifyContent: "center",
         zIndex: 1000,
-        backgroundColor: "rgba(0,0,0, 0.8)",
-        borderBottom: `1px solid ${theme.colors.secondary}`,
+        backgroundColor: "rgba(0,0,0,0.85)",
         color: theme.colors.background,
       }}
-      onMouseLeave={() => setHoveredNav(null)}
+      className="header-with-gradient-border"
     >
       <div
         style={{
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          padding: "0 2rem",
+          padding: "1rem 2rem",
         }}
       >
-        {/* Logo & Branding */}
+        {/* Logo */}
         <Link to="/" style={{ textDecoration: "none" }}>
           <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "0.75rem",
-            }}
+            style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}
           >
             <img
               src={brainlogo}
               alt="Logo"
               className="header-logo"
               style={{
-                // width: "40px",
-                // height: "40px",
                 borderRadius: "50%",
+                width: 40,
+                height: 40,
                 boxShadow: `0 0 8px ${theme.colors.primary}`,
               }}
             />
-            {/* <video
-              className="header-logo"
-              autoPlay
-              loop
-              muted
-              src="https://media.istockphoto.com/id/1314000171/video/earth-rotation-loopable.mp4?s=mp4-640x640-is&k=20&c=wI4rNMfqQ2k4OfeQddU4bkX-EKzCVW_kr0clHhrbiQ4="
-            /> */}
             <span
               style={{
                 color: theme.colors.primary,
                 fontWeight: "bold",
                 fontFamily: "monospace",
                 textShadow: `0 0 8px ${theme.colors.primary}`,
-                fontSize: "1.5rem",
+                fontSize: "1.2rem",
               }}
             >
               The Software Consulting
@@ -81,31 +71,81 @@ const Header: React.FC = () => {
           </div>
         </Link>
 
-        {/* Navigation */}
-        <nav style={{ display: "flex", gap: "2rem" }}>
-          {["Industries", "Services", "Insights", "About"].map(
-            (label) => (
-              <span
-                key={label}
-                onMouseEnter={() => setHoveredNav(label.toLowerCase())}
-                onClick={() => {
-                  navigate(label === "Home" ? "/" : `/${label.toLowerCase()}`);
-                  setHoveredNav(null);
-                }}
-                style={{
-                  color: theme.colors.text,
-                  position: "relative",
-                }}
-                className="nav-link"
-              >
-                {label}
-                <span className="underline" />
-              </span>
-            )
+        {/* Hamburger Icon */}
+        <div
+          className="mobile-menu-icon"
+          onClick={() => setMenuOpen(!menuOpen)}
+          style={{ display: "none", cursor: "pointer" }}
+        >
+          {menuOpen ? (
+            <FiX size={24} color={theme.colors.text} />
+          ) : (
+            <FiMenu size={24} color={theme.colors.text} />
           )}
+        </div>
+
+        {/* Desktop Navigation */}
+        <nav className="nav-links" style={{ display: "flex", gap: "2rem" }}>
+          {["Industries", "Services", "Insights", "About"].map((label) => (
+            <span
+              key={label}
+              onMouseEnter={() => setHoveredNav(label.toLowerCase())}
+              onClick={() => {
+                navigate(`/${label.toLowerCase()}`);
+                setHoveredNav(null);
+              }}
+              style={{
+                color: theme.colors.text,
+                position: "relative",
+                cursor: "pointer",
+              }}
+              className="nav-link"
+            >
+              {label}
+              <span className="underline" />
+            </span>
+          ))}
         </nav>
       </div>
 
+      {/* Mobile Dropdown Menu */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            className="mobile-menu"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3 }}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "1rem",
+              padding: "1rem 2rem",
+              backgroundColor: theme.colors.background,
+            }}
+          >
+            {["Industries", "Services", "Insights", "About"].map((label) => (
+              <span
+                key={label}
+                onClick={() => {
+                  setMenuOpen(false);
+                  navigate(`/${label.toLowerCase()}`);
+                }}
+                style={{
+                  color: theme.colors.text,
+                  fontWeight: "bold",
+                  cursor: "pointer",
+                }}
+              >
+                {label}
+              </span>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Hover Dropdowns */}
       {hoveredNav === "services" && (
         <div
           onMouseLeave={() => setHoveredNav(null)}
@@ -337,6 +377,18 @@ const Header: React.FC = () => {
                     {selectedIndustry.name}
                   </h5>
                   <p>{selectedIndustry.description}</p>
+                  <ul>
+                    {selectedIndustry.capabilities.map((item, idx) => (
+                      <li
+                        key={idx}
+                        style={{
+                          color: theme.colors.text,
+                        }}
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               )}
             </div>
@@ -685,6 +737,15 @@ const Header: React.FC = () => {
         }
         .nav-link:hover .underline {
           width: 100%;
+        }
+
+        @media (max-width: 768px) {
+          .nav-links {
+            display: none !important;
+          }
+          .mobile-menu-icon {
+            display: block !important;
+          }
         }
       `}</style>
     </header>

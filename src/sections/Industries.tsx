@@ -20,6 +20,7 @@ import {
   FaStore,
   FaTruck,
   FaPlaneDeparture,
+  FaBolt,
 } from "react-icons/fa";
 
 export const industriesData: {
@@ -236,26 +237,26 @@ export const industriesData: {
       "Contactless Check-In/Check-Out Systems",
     ],
   },
-  // {
-  //   title: "Utilities",
-  //   icon: <FaBolt size={40} />,
-  //   description:
-  //     "We help utility providers modernize infrastructure with smart grid analytics, outage management systems, and renewable energy monitoring tools. Our customer-facing solutions include billing portals, usage dashboards, and self-service applications — all built with security, scalability, and regulatory compliance in mind.",
-  //   capabilities: [
-  //     "Smart Metering & Grid Analytics",
-  //     "Outage Management Systems",
-  //     "Energy Usage Forecasting",
-  //     "Renewable Integration Monitoring",
-  //     "Customer Billing Portals",
-  //   ],
-  // },
+  {
+    title: "Utilities",
+    icon: <FaBolt size={40} />,
+    description:
+      "We help utility providers modernize infrastructure with smart grid analytics, outage management systems, and renewable energy monitoring tools. Our customer-facing solutions include billing portals, usage dashboards, and self-service applications — all built with security, scalability, and regulatory compliance in mind.",
+    capabilities: [
+      "Smart Metering & Grid Analytics",
+      "Outage Management Systems",
+      "Energy Usage Forecasting",
+      "Renewable Integration Monitoring",
+      "Customer Billing Portals",
+    ],
+  },
 ];
 
 const Industries: React.FC = () => (
   <div
     style={{
       color: theme.colors.text,
-      minHeight: "100vh",
+      // minHeight: "100vh",
       width: "100vw",
       display: "flex",
       flexDirection: "column",
