@@ -9,7 +9,7 @@ const theme = {
     muted: "#444444", // Optional muted color
     accent: "#ffffff", // Accent lines/buttons
     cardBorder: "#222222", // Card border color
-    inputBackground: "#1a1a1a", // Input field background
+    inputBackground: "#121212", // Input field background
   },
 };
 

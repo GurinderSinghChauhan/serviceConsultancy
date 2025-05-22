@@ -15,7 +15,7 @@ const Contact: React.FC = () => {
       style={{
         color: theme.colors.text,
         minHeight: "100vh",
-        width: "100%", // Fixed from 100vw
+        width: "100vw", // Fixed from 100vw
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -26,8 +26,7 @@ const Contact: React.FC = () => {
     >
       <div
         style={{
-          maxWidth: "600px",
-          width: "100%",
+          width: "600px",
           backgroundColor: theme.colors.card,
           padding: "2rem",
           borderRadius: "12px",
