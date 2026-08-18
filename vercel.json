@@ -1,6 +1,8 @@
 {
+    "redirects": [
+      { "source": "/portfolio", "destination": "/products", "permanent": true }
+    ],
     "rewrites": [
       { "source": "/(.*)", "destination": "/" }
     ]
-  }
-  
+}
