@@ -630,7 +630,7 @@ export const portfolioData = [
     description:
       "Organization-isolated document ingestion and retrieval with role-based access, controlled compute, and source-grounded answers.",
     tech: ["FastAPI", "PostgreSQL", "Qdrant", "Vision AI"],
-    demoUrl: "https://riders-kit-waves-cumulative.trycloudflare.com",
+    demoUrl: "https://arcline-demo.thesoftwareconsulting.com",
   },
   {
     title: "E-Commerce App",
