@@ -626,6 +626,13 @@ export const insightsData = [
 
 export const portfolioData = [
   {
+    title: "Secure Document Intelligence",
+    description:
+      "Organization-isolated document ingestion and retrieval with role-based access, controlled compute, and source-grounded answers.",
+    tech: ["FastAPI", "PostgreSQL", "Qdrant", "Vision AI"],
+    demoUrl: "https://riders-kit-waves-cumulative.trycloudflare.com",
+  },
+  {
     title: "E-Commerce App",
     description:
       "A full-stack e-commerce application with payment gateway and admin dashboard.",

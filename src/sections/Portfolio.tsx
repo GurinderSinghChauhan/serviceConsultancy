@@ -91,6 +91,26 @@ const Portfolio: React.FC = () => {
                     </span>
                   ))}
                 </div>
+                {project.demoUrl && (
+                  <a
+                    href={project.demoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      marginTop: "1.25rem",
+                      padding: "0.65rem 1rem",
+                      borderRadius: "6px",
+                      backgroundColor: theme.colors.primary,
+                      color: theme.colors.background,
+                      fontWeight: 600,
+                      textDecoration: "none",
+                    }}
+                  >
+                    Open live demo
+                  </a>
+                )}
               </motion.div>
             ))}
           </div>
