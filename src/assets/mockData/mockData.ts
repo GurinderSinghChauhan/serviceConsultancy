@@ -624,7 +624,7 @@ export const insightsData = [
   },
 ];
 
-export const portfolioData = [
+export const productsData = [
   {
     title: "Secure Document Intelligence",
     description:
@@ -651,9 +651,9 @@ export const portfolioData = [
     tech: ["React Native", "Firebase"],
   },
   {
-    title: "Portfolio Website",
+    title: "Product Showcase Website",
     description:
-      "A personal portfolio with GSAP scroll animations and a custom theme toggle.",
+      "A product showcase with GSAP scroll animations and a custom theme toggle.",
     tech: ["React", "GSAP", "Framer Motion"],
   },
   {

@@ -78,7 +78,7 @@ const Footer: React.FC = () => {
                 Industries
               </Link>
             </li>
-            <li><Link to="/portfolio" style={{ color: theme.colors.text, textDecoration: 'none' }}>Portfolio</Link></li>
+            <li><Link to="/products" style={{ color: theme.colors.text, textDecoration: 'none' }}>Products</Link></li>
           </ul>
         </div>
 

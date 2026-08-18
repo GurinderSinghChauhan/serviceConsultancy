@@ -86,7 +86,7 @@ const Header: React.FC = () => {
 
         {/* Desktop Navigation */}
         <nav className="nav-links" style={{ display: "flex", gap: "2rem" }}>
-          {["Industries", "Services", "Portfolio", "Insights", "About"].map((label) => (
+          {["Industries", "Services", "Products", "Insights", "About"].map((label) => (
             <span
               key={label}
               onMouseEnter={() => setHoveredNav(label.toLowerCase())}
@@ -125,7 +125,7 @@ const Header: React.FC = () => {
               backgroundColor: theme.colors.background,
             }}
           >
-            {["Industries", "Services", "Portfolio", "Insights", "About"].map((label) => (
+            {["Industries", "Services", "Products", "Insights", "About"].map((label) => (
               <span
                 key={label}
                 onClick={() => {

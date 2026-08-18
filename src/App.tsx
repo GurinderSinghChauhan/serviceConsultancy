@@ -8,7 +8,7 @@ import Hero from "./sections/Hero";
 import About from "./sections/About";
 import Contact from "./sections/Contact";
 import Services from "./sections/Services";
-import Portfolio from "./sections/Portfolio";
+import Products from "./sections/Products";
 import CursorFollower from "./components/CursorFollower";
 import Industries from "./sections/Industries";
 import NoiseField from "./components/NoiseField";
@@ -48,7 +48,7 @@ const App: React.FC = () => {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/products" element={<Products />} />
             <Route path="/industries" element={<Industries />} />
             <Route path="/insights" element={<Insights />} />
           </Routes>

@@ -48,7 +48,7 @@ eb275fadb826bf237df1a8cd60a2226464339ffb src/sections/Contact.tsx
 b7dba2ef90dff71896f3a82807c2f91468b3e786 src/sections/Hero.tsx
 ca07bfdfdf7207023a330193cba5893d9a9a873a src/sections/Industries.tsx
 39e23125acaaa13c38d49aaaafdcf934cbacd416 src/sections/Insights.tsx
-ccef116ed410f13ee97bf8724362ff1b17bcddb3 src/sections/Portfolio.tsx
+aa0d3e79cbd7e7a529d7b50903bf7ce05a7db1fc src/sections/Products.tsx
 e69de29bb2d1d6434b8b29ae775ad8c2e48c5391 src/sections/Process.tsx
 09ff0dcc9e28ecb112cdaf25990293b68772ed95 src/sections/Services.tsx
 b460eaff049b9a3b13c0323f6305911af9725f6e src/theme.ts

@@ -1,9 +1,9 @@
 import React from "react";
 import theme from "../theme";
 import { motion } from "framer-motion";
-import { portfolioData } from "../assets/mockData/mockData";
+import { productsData } from "../assets/mockData/mockData";
 
-const Portfolio: React.FC = () => {
+const Products: React.FC = () => {
   return (
     <div
       style={{
@@ -30,7 +30,7 @@ const Portfolio: React.FC = () => {
               marginBottom: "3rem",
             }}
           >
-            Portfolio
+            Products
           </h1>
 
           <div
@@ -40,7 +40,7 @@ const Portfolio: React.FC = () => {
               gap: "2rem",
             }}
           >
-            {portfolioData.map((project, i) => (
+            {productsData.map((project, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 30 }}
@@ -120,4 +120,4 @@ const Portfolio: React.FC = () => {
   );
 };
 
-export default Portfolio;
+export default Products;
