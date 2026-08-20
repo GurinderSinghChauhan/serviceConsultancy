@@ -133,7 +133,7 @@ const Footer: React.FC = () => {
       >
         <p>
           © {new Date().getFullYear()} The Software Consulting. All rights
-          reserved.
+          reserved. <span aria-label={`Application version ${__APP_VERSION__}`}>v{__APP_VERSION__}</span>
         </p>
         <p>
           <Link
