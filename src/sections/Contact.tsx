@@ -1,142 +1,43 @@
-// src/screens/Contact.tsx
-import React from "react";
-import theme from "../theme";
-import {
-  FaEnvelope,
-  FaPhone,
-  FaLinkedin,
-  FaTwitter,
-  FaGithub,
-} from "react-icons/fa";
+import type { FormEvent } from "react";
+import PageIntro from "../components/PageIntro";
 
-const Contact: React.FC = () => {
+const Contact = () => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = new FormData(event.currentTarget);
+    const subject = encodeURIComponent(`Project inquiry from ${String(form.get("name") || "website visitor")}`);
+    const body = encodeURIComponent(
+      `Name: ${String(form.get("name") || "")}\nEmail: ${String(form.get("email") || "")}\nCompany: ${String(form.get("company") || "")}\n\n${String(form.get("message") || "")}`,
+    );
+    window.location.href = `mailto:gschauhan1991@gmail.com?subject=${subject}&body=${body}`;
+  };
+
   return (
-    <div
-      style={{
-        color: theme.colors.text,
-        minHeight: "100vh",
-        width: "100vw", // Fixed from 100vw
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        padding: "2rem",
-        boxSizing: "border-box", // Prevent padding from pushing content
-        overflowX: "hidden", // Optional: ensure horizontal scroll doesn't appear
-      }}
-    >
-      <div
-        style={{
-          width: "600px",
-          backgroundColor: theme.colors.card,
-          padding: "2rem",
-          borderRadius: "12px",
-          boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
-        }}
-      >
-        <h1 style={{ textAlign: "center", marginBottom: "1.5rem" }}>
-          Contact Us
-        </h1>
-
-        <p
-          style={{
-            display: "flex",
-            alignItems: "center",
-            marginBottom: "0.5rem",
-          }}
-        >
-          <FaEnvelope style={{ marginRight: "8px" }} /> gschauhan1991@gmail.com
-        </p>
-        <p
-          style={{
-            display: "flex",
-            alignItems: "center",
-            marginBottom: "1rem",
-          }}
-        >
-          <FaPhone style={{ marginRight: "8px" }} /> +310-259-1394
-        </p>
-
-        <form style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-          <input
-            type="text"
-            placeholder="Your Name"
-            style={{
-              padding: "0.8rem",
-              borderRadius: "8px",
-              border: "1px solid #ccc",
-              backgroundColor: theme.colors.inputBackground,
-              color: theme.colors.text,
-            }}
-          />
-          <input
-            type="email"
-            placeholder="Your Email"
-            style={{
-              padding: "0.8rem",
-              borderRadius: "8px",
-              border: "1px solid #ccc",
-              backgroundColor: theme.colors.inputBackground,
-              color: theme.colors.text,
-            }}
-          />
-          <textarea
-            placeholder="Your Message"
-            rows={4}
-            style={{
-              padding: "0.8rem",
-              borderRadius: "8px",
-              border: "1px solid #ccc",
-              backgroundColor: theme.colors.inputBackground,
-              color: theme.colors.text,
-              resize: "none",
-            }}
-          ></textarea>
-          <button
-            type="submit"
-            style={{
-              padding: "0.8rem",
-              borderRadius: "8px",
-              color: "#fff",
-              border: "none",
-            }}
-          >
-            Send Message
-          </button>
-        </form>
-
-        <div
-          style={{
-            marginTop: "2rem",
-            display: "flex",
-            justifyContent: "center",
-            gap: "1.5rem",
-            fontSize: "1.4rem",
-          }}
-        >
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaLinkedin />
-          </a>
-          <a
-            href="https://twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaTwitter />
-          </a>
-          <a
-            href="https://github.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaGithub />
-          </a>
+    <>
+      <PageIntro
+        eyebrow="Start a conversation"
+        title="Tell us what you’re working on."
+        description="Share the challenge, the opportunity, or simply where you need momentum. We’ll respond with a clear next step."
+        meta="Replies within 1–2 business days"
+      />
+      <section className="section container contact-grid">
+        <div className="contact-details">
+          <div className="contact-detail"><span>Email</span><a href="mailto:gschauhan1991@gmail.com">gschauhan1991@gmail.com</a></div>
+          <div className="contact-detail"><span>Phone</span><a href="tel:+13102591394">+1 310 259 1394</a></div>
+          <div className="contact-detail"><span>Best for</span><strong>New products, modernization, AI, and technical strategy</strong></div>
         </div>
-      </div>
-    </div>
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <div className="form-row">
+            <div className="field"><label htmlFor="name">Name</label><input id="name" name="name" autoComplete="name" required /></div>
+            <div className="field"><label htmlFor="email">Work email</label><input id="email" name="email" type="email" autoComplete="email" required /></div>
+          </div>
+          <div className="field"><label htmlFor="company">Company</label><input id="company" name="company" autoComplete="organization" /></div>
+          <div className="field"><label htmlFor="message">What can we help you build?</label><textarea id="message" name="message" required /></div>
+          <button className="button button-primary" type="submit">Open email draft <span aria-hidden="true">↗</span></button>
+          <p className="form-note">Submitting opens your email client with the message ready for your review.</p>
+        </form>
+      </section>
+    </>
   );
 };
 
